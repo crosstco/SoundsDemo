@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SoundsDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,51 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4S-73-FrI">
+                                <rect key="frame" x="132" y="70" width="138" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Play Chord"/>
+                                <connections>
+                                    <action selector="noteAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PY7-IN-nU0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwk-7k-mhA">
+                                <rect key="frame" x="113" y="335" width="165" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Play Music"/>
+                                <connections>
+                                    <action selector="musicAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S7d-et-qG7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8j-aI-Obc">
+                                <rect key="frame" x="113" y="202" width="187" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Play Gun Sound"/>
+                                <connections>
+                                    <action selector="gunAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RSC-iA-qQw"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Pwk-7k-mhA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="511-cm-cOg"/>
+                            <constraint firstItem="c8j-aI-Obc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="596-iz-wFt"/>
+                            <constraint firstItem="t4S-73-FrI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="Kui-fr-LMv"/>
+                            <constraint firstItem="t4S-73-FrI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ad9-9V-aVY"/>
+                            <constraint firstItem="Pwk-7k-mhA" firstAttribute="top" secondItem="c8j-aI-Obc" secondAttribute="bottom" constant="50" id="dcP-Xw-lf7"/>
+                            <constraint firstItem="c8j-aI-Obc" firstAttribute="top" secondItem="t4S-73-FrI" secondAttribute="bottom" constant="50" id="hvh-jK-l23"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="playChord" destination="t4S-73-FrI" id="hvY-4j-vhy"/>
+                        <outlet property="playGun" destination="c8j-aI-Obc" id="3YT-a5-KvB"/>
+                        <outlet property="playMusic" destination="Pwk-7k-mhA" id="jWP-kd-8xD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="288" y="334"/>
         </scene>
     </scenes>
 </document>
